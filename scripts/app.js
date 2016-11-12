@@ -68,8 +68,7 @@
             const articleAuthorBlock = document.createElement('div');
             articleAuthorBlock.classList.add('article-author');
             const authorIcon = document.createElement('i');
-            authorIcon.classList.add('fa');
-            authorIcon.classList.add('fa-user-o');
+            authorIcon.classList.add('icon-user');
             authorIcon.setAttribute('aria-hidden', true);
             const articleAuthor = document.createElement('span');
             articleAuthor.innerText = article.author;
@@ -79,8 +78,7 @@
             const articleDateBlock = document.createElement('div');
             articleDateBlock.classList.add('article-date');
             const dateIcon = document.createElement('i');
-            dateIcon.classList.add('fa');
-            dateIcon.classList.add('fa-clock-o');
+            dateIcon.classList.add('icon-clock');
             dateIcon.setAttribute('aria-hidden', true);
             const articleDate = document.createElement('span');
             articleDate.innerText = new Date(article.publishedAt).toLocaleDateString();
