@@ -3,6 +3,4 @@ ____
 
 ####Introduction to ECMAScript 2015
 
-[Click to see](https://ellendanilowa.github.io/frontcamp_task1/)
-
-
+[Click to see](https://ellendanilowa.github.io/frontcamp_task1/?apiKey=)
