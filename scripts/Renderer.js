@@ -46,6 +46,7 @@ class Renderer {
         articleDescription.innerText = article.description;
 
         const articleLink = document.createElement('a');
+        articleLink.classList.add('link');
         articleLink.classList.add('article-link');
         articleLink.setAttribute('href', article.url.replace('http:', 'https:'));
         articleLink.setAttribute('target', '_blank');
@@ -57,6 +58,7 @@ class Renderer {
         const articleAuthorBlock = document.createElement('div');
         articleAuthorBlock.classList.add('article-author');
         const authorIcon = document.createElement('i');
+        authorIcon.classList.add('icon');
         authorIcon.classList.add('icon-user');
         authorIcon.setAttribute('aria-hidden', true);
         const articleAuthor = document.createElement('span');
@@ -67,6 +69,7 @@ class Renderer {
         const articleDateBlock = document.createElement('div');
         articleDateBlock.classList.add('article-date');
         const dateIcon = document.createElement('i');
+        dateIcon.classList.add('icon');
         dateIcon.classList.add('icon-clock');
         dateIcon.setAttribute('aria-hidden', true);
         const articleDate = document.createElement('span');

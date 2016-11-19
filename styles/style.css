@@ -3,44 +3,39 @@
     padding: 0;
 }
 
-a, h1, h2, p, span {
+body {
+    background-color: rgba(250, 250, 250, 1);
     font-family: 'Roboto Slab', serif;
 }
 
-p, span {
-    font-size: 0.9rem;
-}
-
-body {
-    background-color: #fafafa;
-}
-a {
-    color: rgba(0,0,0,.44);
-    text-decoration: none;
-}
-a:hover {
-    color: rgba(0,0,0,.6);
-}
-i {
-    color: #00ab6b;
-}
-
-.header,
-.footer {
+header,
+footer {
     padding: 20px;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 1);
 }
 
-.header {
-    background-color: #5cc7b2;
+header {
+    background-color: rgba(92, 199, 178, 1);
 }
 
-.footer {
-    background-color: #e6e6e6;
-    color: #777777;
+footer {
+    background-color: rgba(230, 230, 230, 1);
+    color: rgba(119, 119, 119, 1);
     text-align: center;
 }
 
+.link {
+    color: rgba(0,0,0,.44);
+    text-decoration: none;
+}
+.link:hover {
+    color: rgba(0,0,0,.6);
+}
+.icon {
+    color: rgba(0, 171, 107, 1);
+}
+
+/***ARTICLE***/
 .article-block {
     margin: 0 auto;
     width: 860px;
@@ -50,7 +45,7 @@ i {
 .article-item {
     margin: 12px 0;
     padding: 28px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
     border: 1px solid rgba(0,0,0,.09);
 }
@@ -69,6 +64,7 @@ i {
     text-overflow: ellipsis;
     overflow: hidden;
     margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 .article-additional-inf {
     margin-top: 8px;
@@ -82,45 +78,9 @@ i {
 }
 
 .error {
-    background: #fbd2d3;
-    border: 2px solid #ed1c24;
-    color: #ed1c24;
+    background: rgba(251, 210, 211, 1);
+    border: 2px solid rgba(237, 28, 36, 1);
+    color: rgba(237, 28, 36, 1);
     padding: 24px;
     margin: 12px;
-}
-
-@media screen and (max-width: 860px) {
-  .header {
-    text-align: center;
-  }
-
-  .article-block {
-      width: 620px;
-  }
-
-  .article-image {
-      height: 306px;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  .article-block {
-      width: 90%;
-  }
-
-  .article-image {
-      height: 260px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .article-image {
-      height: 200px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .article-image {
-      height: 150px;
-  }
 }
