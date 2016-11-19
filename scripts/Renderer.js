@@ -1,4 +1,8 @@
-class Renderer {
+import Loader from './Loader';
+import ApiKeyProvider from './ApiKeyProvider';
+require('babel-polyfill');
+
+export default class Renderer {
 
     constructor() {
         this.articleBlock = document.getElementsByClassName('article-block').item(0);

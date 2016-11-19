@@ -69,8 +69,10 @@ footer {
 .article-additional-inf {
     margin-top: 8px;
     display: flex;
+    display: -ms-flexbox;
     flex-wrap: nowrap;
     justify-content: space-between;
+    -ms-flex-pack: justify;
 }
 
 .article-link {
