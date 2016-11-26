@@ -5,25 +5,22 @@
     <title>BBC News - ES6</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-
-    <link rel="stylesheet" media="(max-width: 992px)" href="styles/md.css" />
-    <link rel="stylesheet" media="(max-width: 768px)" href="styles/sm.css" />
-    <link rel="stylesheet" media="(max-width: 480px)" href="styles/xs.css" />
 </head>
 <body>
     <header>
         <h1 class="title">BBC News</h1>
     </header>
-    <div class="article-block"></div>
+    <div class="main">
+        <input type="submit" class="button" id="load" value="Load news"/>
+        <div class="article-block"></div>
+    </div>
     <footer>
         <p>
             Using
             <a class="link" href="https://newsapi.org/" target="_blank">News API</a>
         </p>
     </footer>
-    <script src="dist/bundle.js"></script>
-</body>
+    <script src="dist/main.js"></script>
 </html>

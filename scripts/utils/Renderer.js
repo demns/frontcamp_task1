@@ -1,35 +1,20 @@
-import Loader from './Loader';
-import ApiKeyProvider from './ApiKeyProvider';
 require('babel-polyfill');
 
-export default class Renderer {
-
-    constructor() {
+class Renderer {
+    constructor(apiKey) {
         this.articleBlock = document.getElementsByClassName('article-block').item(0);
-        this.requestLink = 'https://newsapi.org/v1/articles?source=bbc-news';
     };
 
-    render() {
-        const apiKeyProvider = new ApiKeyProvider();
-        const apiKey = apiKeyProvider.getApiKey();
-        if (apiKey) {
-            const loader = new Loader(this.requestLink, apiKey);
-            const articleBlockFragment = document.createDocumentFragment();
+    renderErrorMessage(message) {
+        this.articleBlock.appendChild(this.createErrorBlock(message));
+    };
 
-            loader.load().then(articles => {
-                for (const article of articles) {
-                    articleBlockFragment.appendChild(this.createArticleItemBlock(article));
-                };
-
-                this.articleBlock.appendChild(articleBlockFragment);
-            }).catch(error => {
-                this.articleBlock.appendChild(this.createErrorBlock(error));
-            });
-        } else {
-            const errorMessage = 'Missing api key in URL';
-            this.articleBlock.appendChild(this.createErrorBlock(errorMessage));
-        }
-
+    renderArticles(articles) {
+        const articleBlockFragment = document.createDocumentFragment();
+        for (const article of articles) {
+            articleBlockFragment.appendChild(this.createArticleItemBlock(article));
+        };
+        this.articleBlock.appendChild(articleBlockFragment);
     };
 
     createArticleItemBlock(article) {
@@ -102,3 +87,5 @@ export default class Renderer {
         return errorBlock;
     };
 }
+
+module.exports = Renderer;

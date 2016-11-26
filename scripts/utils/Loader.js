@@ -1,9 +1,9 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-export default class Loader {
-    constructor (link, apiKey) {
-        this.link = link;
+class Loader {
+    constructor (apiKey) {
+        this.link = 'https://newsapi.org/v1/articles?source=bbc-news';
         this.apiKey = apiKey;
     };
 
@@ -21,3 +21,5 @@ export default class Loader {
             .catch(error => error);
     };
 }
+
+module.exports = Loader;

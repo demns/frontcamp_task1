@@ -1,4 +1,4 @@
-export default class ApiKeyProvider {
+class ApiKeyProvider {
     getApiKey() {
         const locationString = window.location.search.substring(1).split('=');
         let apiKey;
@@ -10,3 +10,5 @@ export default class ApiKeyProvider {
         return apiKey;
     }
 }
+
+module.exports = ApiKeyProvider;
