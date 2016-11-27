@@ -1,17 +1,17 @@
-@import 'colors.scss';
+@import 'variables.scss';
 
 /***ARTICLE***/
 .article-block {
     margin: 0 auto;
 
-    @media screen and (max-width: 960px) {
+    @include md {
         width: 100%;
     }
 
     .article-item {
         margin: 12px 0;
         padding: 28px;
-        background-color: $white;
+        background-color: $background-3;
         box-shadow: 0 1px 4px $shadow-1;
         border: 1px solid rgba(0,0,0,.09);
         text-align: left;
@@ -19,6 +19,8 @@
         & .article {
             &-title {
                 margin-bottom: 8px;
+                font-size: 1.5em;
+                font-weight: bold;
             }
 
             &-image {
@@ -26,11 +28,11 @@
                 height: 420px;
                 margin-bottom: 8px;
 
-                @media screen and (max-width: 960px) {
+                @include md {
                     height: 306px;
                 }
 
-                @media screen and (max-width: 480px) {
+                @include xs {
                     height: 150px;
                 }
             }
@@ -44,10 +46,8 @@
             &-additional-inf {
                 margin-top: 8px;
                 display: flex;
-                display: -ms-flexbox;
                 flex-wrap: nowrap;
                 justify-content: space-between;
-                -ms-flex-pack: justify;
             }
 
             &-link {

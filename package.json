@@ -29,6 +29,8 @@
     "es6-promise": "^4.0.5",
     "isomorphic-fetch": "^2.2.1",
     "node-sass": "^3.13.0",
+    "postcss-autoreset": "^1.2.1",
+    "postcss-loader": "^1.1.1",
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",

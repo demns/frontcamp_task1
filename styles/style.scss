@@ -1,54 +1,49 @@
-@import 'colors.scss';
-
-* {
-    margin: 0;
-    padding: 0;
-}
+@import 'variables.scss';
 
 body {
-    background-color: $light-gray-1;
+    background-color: $background-2;
     font-family: 'Roboto Slab', serif;
 }
 
-header,
-footer {
-    padding: 20px;
-    color: $white;
+.site-primary-content,
+.site-information-block {
+    padding: 2px 20px;
+    color: $font-1;
 }
 
-header {
-    background-color: $turquoise;
+.site-primary-content {
+    background-color: $background-1;
 
-    @media screen and (max-width: 960px) {
+    @include md {
         text-align: center;
     }
 }
 
-.main {
-    min-height: calc(100vh - 144px);
+.site-content {
+    min-height: calc(100vh - 148px);
     margin: 0 auto;
     text-align: center;
     width: 860px;
 
-    @media screen and (max-width: 960px) {
+    @include md {
         width: 620px;
     }
 
-    @media screen and (max-width: 780px) {
+    @include sm {
         width: 90%;
     }
 }
 
-footer {
-    background-color: $gray;
-    color: $dark-gray;
+.site-information-block {
+    background-color: $background-4;
+    color: $font-3;
     text-align: center;
 }
 
 .button {
-    background: $turquoise;
+    background: $background-1;
     border: none;
-    color: $white;
+    color: $font-1;
     padding: 8px 12px;
     border-radius: 3px;
     margin: 12px;
@@ -56,19 +51,19 @@ footer {
 }
 
 .link {
-    color: $light-gray-2;
+    color: $font-4;
     text-decoration: none;
 }
 .link:hover {
-    color: $light-gray-3;
+    color: $font-5;
 }
 .icon {
-    color: $green;
+    color: $font-2;
 }
 .error {
-    background: $light-red;
-    border: 2px solid $red;
-    color: $red;
+    background: $background-5;
+    border: 2px solid $font-6;
+    color: $font-6;
     padding: 24px;
     margin: 12px;
 }

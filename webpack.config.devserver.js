@@ -13,8 +13,7 @@ module.exports = {
 
    output: {
         path: __dirname + '/dist',
-        publicPath: './dist/',
-        filename: 'dist/bundle.js'
+        filename: 'dist/[name].js'
    },
 
    resolve: {
@@ -27,7 +26,7 @@ module.exports = {
    module: {
        loaders: [{
                test: /\.scss$/,
-               loader: "style!css!sass"
+               loader: "style!css!postcss!sass"
            }, {
                test: /\.js$/,
                loader: "babel",
@@ -38,6 +37,15 @@ module.exports = {
            }
        ]
    },
+
+   postcss: function () {
+        return [
+            require('postcss-autoreset')({
+                reset: 'sizes' 
+            }), 
+            require('autoprefixer')
+        ];
+  },
 
    devServer: {
        port: 8080,
