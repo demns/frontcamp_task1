@@ -1,51 +1,40 @@
-require('babel-polyfill');
+const Render = require('./Render');
 
-class Renderer {
-    constructor(apiKey) {
-        this.articleBlock = document.getElementsByClassName('article-block').item(0);
-    };
+class RenderArticle extends Render {
+	constructor(articles) {		
+		super();
+		this.articles = articles;
+	};
 
-    renderErrorMessage(message) {
-        this.articleBlock.appendChild(this.createErrorBlock(message));
-    };
-
-    renderArticles(articles) {
-        const articleBlockFragment = document.createDocumentFragment();
-        for (const article of articles) {
-            articleBlockFragment.appendChild(this.createArticleItemBlock(article));
-        };
-        this.articleBlock.appendChild(articleBlockFragment);
-    };
-
-    createArticleItemBlock(article) {
-        const articleItemBlock = document.createElement('div');
-        articleItemBlock.classList.add('article-item');
+	createBlock(article) {
+		const articleItemBlock = document.createElement('div');
+        articleItemBlock.classList.add('article-list__item');
 
         const articleTitle = document.createElement('h2');
-        articleTitle.classList.add('article-title');
+        articleTitle.classList.add('article-list__item__title');
         articleTitle.innerText = article.title;
 
         const articleImg = document.createElement('img');
-        articleImg.classList.add('article-image');
+        articleImg.classList.add('article-list__item__image');
         articleImg.setAttribute('src', article.urlToImage.replace('http:', 'https:'));
         articleImg.setAttribute('alt', 'awesome picture');
 
         const articleDescription = document.createElement('p');
-        articleDescription.classList.add('article-description');
+        articleDescription.classList.add('article-list__item__description');
         articleDescription.innerText = article.description;
 
         const articleLink = document.createElement('a');
         articleLink.classList.add('link');
-        articleLink.classList.add('article-link');
+        articleLink.classList.add('article-list__item__link');
         articleLink.setAttribute('href', article.url.replace('http:', 'https:'));
         articleLink.setAttribute('target', '_blank');
         articleLink.innerText = 'Read more...';
 
         const additionalInfBlock = document.createElement('div');
-        additionalInfBlock.classList.add('article-additional-inf');
+        additionalInfBlock.classList.add('article-list__item__additional-information');
 
         const articleAuthorBlock = document.createElement('div');
-        articleAuthorBlock.classList.add('article-author');
+        articleAuthorBlock.classList.add('article-list__item__additional-information__author');
         const authorIcon = document.createElement('i');
         authorIcon.classList.add('icon');
         authorIcon.classList.add('icon-user');
@@ -56,7 +45,7 @@ class Renderer {
         articleAuthorBlock.appendChild(articleAuthor);
 
         const articleDateBlock = document.createElement('div');
-        articleDateBlock.classList.add('article-date');
+        articleDateBlock.classList.add('article-list__item__additional-information__date');
         const dateIcon = document.createElement('i');
         dateIcon.classList.add('icon');
         dateIcon.classList.add('icon-clock');
@@ -77,15 +66,16 @@ class Renderer {
         articleItemBlock.appendChild(additionalInfBlock);
 
         return articleItemBlock;
-    };
+	};
 
-    createErrorBlock(error) {
-        const errorBlock = document.createElement('div');
-        errorBlock.classList.add('error');
-        errorBlock.innerText = `Failed: ${error}`;
+	render(){
+		const articleBlockFragment = document.createDocumentFragment();
+        for (const article of this.articles) {
+            articleBlockFragment.appendChild(this.createBlock(article));
+        };
 
-        return errorBlock;
-    };
-}
+        super.render(articleBlockFragment);
+	};
+};
 
-module.exports = Renderer;
+module.exports = RenderArticle;

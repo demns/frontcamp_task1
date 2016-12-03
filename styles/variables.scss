@@ -1,9 +1,9 @@
-$font-1: rgba(255, 255, 255, 1);
-$font-2: rgba(0, 171, 107, 1);
-$font-3: rgba(119, 119, 119, 1);
-$font-4: rgba(0,0,0,.44);
-$font-5: rgba(0,0,0,.6);
-$font-6: rgba(237, 28, 36, 1);
+$color-1: rgba(255, 255, 255, 1);
+$color-2: rgba(0, 171, 107, 1);
+$color-3: rgba(119, 119, 119, 1);
+$color-4: rgba(0,0,0,.44);
+$color-5: rgba(0,0,0,.6);
+$color-6: rgba(237, 28, 36, 1);
 
 $background-1: rgba(92, 199, 178, 1);
 $background-2: rgba(255, 250, 250, 1);
@@ -12,6 +12,9 @@ $background-4: rgba(230, 230, 230, 1);
 $background-5: rgba(251, 210, 211, 1);
 
 $shadow-1: rgba(0,0,0,.06);
+
+$margin__base: 12px;
+$margin-2: 8px;
 
 $screen-md: 960px;
 $screen-sm: 780px;

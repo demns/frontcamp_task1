@@ -1,6 +1,9 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
+const Article = require('../models/Article');
+const Error = require('../models/Error');
+
 class Loader {
     constructor (apiKey) {
         this.link = 'https://newsapi.org/v1/articles?source=bbc-news';
@@ -17,8 +20,17 @@ class Loader {
                 mode: 'cors'
             })
             .then(response => response.json())
-            .then(data => data.articles)
-            .catch(error => error);
+            .then(data => {
+                const articles = [];
+                data.articles.forEach(item => {
+                    articles.push(new Article(item));
+                });
+
+                return articles;
+            })
+            .catch(error => {
+                return new Error(error);
+            });
     };
 }
 

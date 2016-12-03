@@ -1,58 +1,58 @@
 @import 'variables.scss';
 
 /***ARTICLE***/
-.article-block {
+.article-list {
     margin: 0 auto;
 
     @include md {
         width: 100%;
     }
 
-    .article-item {
-        margin: 12px 0;
+    &__item {
+        margin: $margin__base 0;
         padding: 28px;
         background-color: $background-3;
         box-shadow: 0 1px 4px $shadow-1;
         border: 1px solid rgba(0,0,0,.09);
         text-align: left;
 
-        & .article {
-            &-title {
-                margin-bottom: 8px;
-                font-size: 1.5em;
-                font-weight: bold;
+        &__title {
+            margin-bottom: $margin-2;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        &__image {
+            width: 100%;
+            height: 420px;
+            margin-bottom: $margin-2;
+
+            @include md {
+                height: 306px;
             }
 
-            &-image {
-                width: 100%;
-                height: 420px;
-                margin-bottom: 8px;
+            @include xs {
+                height: 150px;
+            }
+        }
 
-                @include md {
-                    height: 306px;
-                }
+        &__description {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: $margin-2;
+            font-size: 0.9rem;
+        }
 
-                @include xs {
-                    height: 150px;
-                }
-            }
-            &-description {
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                margin-bottom: 8px;
-                font-size: 0.9rem;
-            }
-            &-additional-inf {
-                margin-top: 8px;
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-            }
+        &__additional-information {
+            margin-top: $margin-2;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
 
-            &-link {
-                font-size: 0.8rem;
-            }
+        &__link {
+            font-size: 0.8rem;
         }
     }
 }

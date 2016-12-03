@@ -5,22 +5,26 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
-.site-primary-content,
-.site-information-block {
-    padding: 2px 20px;
-    color: $font-1;
+.site-header,
+.site-information {
+    padding: 20px;
+    color: $color-1;
 }
 
-.site-primary-content {
+.site-header {
     background-color: $background-1;
 
     @include md {
         text-align: center;
     }
+
+    &__logo {
+        font-size: 1.8em;
+    }
 }
 
 .site-content {
-    min-height: calc(100vh - 148px);
+    min-height: calc(100vh - 140px);
     margin: 0 auto;
     text-align: center;
     width: 860px;
@@ -34,36 +38,46 @@ body {
     }
 }
 
-.site-information-block {
+.site-information {
     background-color: $background-4;
-    color: $font-3;
+    color: $color-3;
     text-align: center;
+
+    &__api {
+        font-size: 0.9rem;
+    }
 }
 
 .button {
     background: $background-1;
     border: none;
-    color: $font-1;
+    color: $color-1;
     padding: 8px 12px;
     border-radius: 3px;
-    margin: 12px;
+    margin: $margin__base;
     box-shadow: 0 2px 16px $shadow-1;
 }
 
 .link {
-    color: $font-4;
+    color: $color-4;
     text-decoration: none;
 }
 .link:hover {
-    color: $font-5;
+    color: $color-5;
 }
+
 .icon {
-    color: $font-2;
+    color: $color-2;
 }
+
 .error {
     background: $background-5;
-    border: 2px solid $font-6;
-    color: $font-6;
+    border: 2px solid $color-6;
+    color: $color-6;
     padding: 24px;
-    margin: 12px;
+    margin: $margin__base;
+}
+
+.hidden {
+    display: none;
 }
