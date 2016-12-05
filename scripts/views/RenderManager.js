@@ -1,29 +1,31 @@
 const RenderArticle = require('./RenderArticle');                
 const RenderError = require('./RenderError');
 
-let RenderManager = (function () {
-	let privateFunctions = new WeakMap();
+const RenderManager = (function () {
+	const privateFunctions = new Map();
 
-    function renderArticles(articles) {
+	function renderArticles(articles) {
 		const renderArticles = new RenderArticle(articles);
-	    renderArticles.render();
+		renderArticles.render();
 	};
 
 	function renderError(error) {
 		const renderError = new RenderError(error);
-	    renderError.render();
+		renderError.render();
 	};
 
-  class RenderManager {
+  class Renderer {
     constructor(name) {
-      privateFunctions.set(this, {renderArticles: renderArticles, renderError: renderError}); // this is private
+			privateFunctions.set('renderArticles', renderArticles); 
+			privateFunctions.set('renderError', renderError); 
     }
-	execute(command) {
-		privateFunctions.get(this)[command.requestInfo](command.data);
-	};
+
+		execute(command) {
+			privateFunctions.get(command.requestInfo)(command.data);
+		};
   }
 
-  return RenderManager;
+  return Renderer;
 })();
 
 

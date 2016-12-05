@@ -1,4 +1,4 @@
-class Article {
+class ArticleModel {
 	constructor(article) {
 		this.author = article.author;
 		this.description = article.description;
@@ -9,4 +9,4 @@ class Article {
 	};
 };
 
-module.exports = Article;
+module.exports = ArticleModel;

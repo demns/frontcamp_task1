@@ -1,7 +1,7 @@
-class Error {
+class ErrorModel {
 	constructor(message) {
 		this.message = message; 
 	};
 };
 
-module.exports = Error;
+module.exports = ErrorModel;

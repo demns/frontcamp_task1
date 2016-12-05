@@ -6,7 +6,7 @@ class RenderError extends Render {
 		this.error = error;
 	};
 
-	createBlock() {
+	createErrorBlock() {
 		const errorBlock = document.createElement('div');
         errorBlock.classList.add('error');
         errorBlock.innerText = `Failed: ${this.error.message}`;
@@ -14,8 +14,8 @@ class RenderError extends Render {
         return errorBlock;
 	};
 
-	render(){
-		const errorBlock = this.createBlock();
+	render() {
+		const errorBlock = this.createErrorBlock();
 		super.render(errorBlock);
 	};
 };

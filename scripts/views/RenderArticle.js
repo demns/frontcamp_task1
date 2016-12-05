@@ -6,19 +6,32 @@ class RenderArticle extends Render {
 		this.articles = articles;
 	};
 
+    createArticleTitle(title) {
+        const articleTitle = document.createElement('h2');
+        articleTitle.classList.add('article-list__item__title');
+        articleTitle.innerText = title;
+        
+        return articleTitle;
+    }
+
+    createArticleImage(url) {
+        const articleImg = document.createElement('img');
+        articleImg.classList.add('article-list__item__image');
+        articleImg.setAttribute('src', url);
+        articleImg.setAttribute('alt', 'awesome picture');
+        
+        return articleImg;
+    }
+
 	createBlock(article) {
 		const articleItemBlock = document.createElement('div');
         articleItemBlock.classList.add('article-list__item');
 
-        const articleTitle = document.createElement('h2');
-        articleTitle.classList.add('article-list__item__title');
-        articleTitle.innerText = article.title;
+        const articleTitle = this.createArticleTitle(article.title);
 
-        const articleImg = document.createElement('img');
-        articleImg.classList.add('article-list__item__image');
-        articleImg.setAttribute('src', article.urlToImage.replace('http:', 'https:'));
-        articleImg.setAttribute('alt', 'awesome picture');
+        const articleImg = this.createArticleImage(article.urlToImage.replace('http:', 'https:'));
 
+        // and so on
         const articleDescription = document.createElement('p');
         articleDescription.classList.add('article-list__item__description');
         articleDescription.innerText = article.description;
@@ -68,7 +81,7 @@ class RenderArticle extends Render {
         return articleItemBlock;
 	};
 
-	render(){
+	render() {
 		const articleBlockFragment = document.createDocumentFragment();
         for (const article of this.articles) {
             articleBlockFragment.appendChild(this.createBlock(article));

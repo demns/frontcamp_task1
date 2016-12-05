@@ -36,6 +36,9 @@ module.exports = {
            }, {
                test: /\.html$/,
                loader: "raw"
+           }, {
+               test: /\.json$/,
+               loader: "json"
            }
        ]
    },

@@ -1,8 +1,9 @@
 require('babel-polyfill');
+const config = require('../config/config.json');
 
 class Render {
     constructor() {
-        this.mainBlock = document.getElementsByClassName('article-list').item(0);
+        this.mainBlock = document.getElementsByClassName(config.articleListClass).item(0);
     };
 
     render(block) {
